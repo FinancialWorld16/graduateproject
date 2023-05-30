@@ -19,7 +19,7 @@ public class Member {
     private Long id;
 
     @NotEmpty
-    private String memberName; //이게 아이디 개념임 ㅇㅇ
+    private String memberName; //회원 계정 아이디
 
     private String memberPassword;
 

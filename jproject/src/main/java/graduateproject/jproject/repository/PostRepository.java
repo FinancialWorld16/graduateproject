@@ -28,11 +28,11 @@ public class PostRepository {
 
     //findAll: 전체 리스트 조회
     public List<Post> findAll() {
-        return em.createQuery("select p from Post p", Post.class) //JPQL. from의 대상이 테이블이 아니라 entity
+        return em.createQuery("select p from Post p", Post.class) //JPQL
                 .getResultList();
     }
 
-    @Transactional //이거 달아야 delete 가능
+    @Transactional //delete시 @Transactional 필수
     public void deleteOne(Long postId) {
         System.out.println("postId = " + postId);
         Post post = em.createQuery("select p from Post p where p.id = :postId", Post.class)

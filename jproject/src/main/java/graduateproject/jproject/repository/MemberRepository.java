@@ -27,7 +27,7 @@ public class MemberRepository {
 
     //findAll: 전체 리스트 조회
     public List<Member> findAll() {
-        return em.createQuery("select m from Member m", Member.class) //JPQL. from의 대상이 테이블이 아니라 entity
+        return em.createQuery("select m from Member m", Member.class) //JPQL
                 .getResultList();
     }
 
