@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div>
+        <table class="table table-striped">
+            <thead>
+            </thead>
+            <tbody>
+            <h1 th:text ="${post.title}"></h1>
+            <h6 style="display:inline">작성자: </h6>
+            <h6 style="display:inline" th:text="${post.member.memberName}"></h6>
+            <textarea cols="100" rows="10" th:field="${post.content}" readonly></textarea>
+
+            <td>
+                <a data-method="post" th:href="@{/post/{id}/delete (id=${post.id})}"
+                   class="btn btn-danger" role="button">삭제</a>
+            </td>
+
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+</html>
